@@ -1,0 +1,11 @@
+{
+  "enabled": false,
+  "region": "cn-beijing",
+  "expiresAt": null,
+  "approvedBudgetCny": 0,
+  "note": "仅在用户明确授权实际API消费后填写；网页额度不计入API预算。",
+  "productionId": "first-film",
+  "providers": [
+    "aliyun"
+  ]
+}

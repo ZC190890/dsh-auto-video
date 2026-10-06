@@ -1,0 +1,20 @@
+{
+  "name": "dsh-auto-video",
+  "version": "1.0.0",
+  "description": "Qwen omni planning, brief and script generation, Alibaba media generation and FFmpeg assembly",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "start": "node index.js",
+    "doctor": "node index.js doctor input/production.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/deepseek": "^1.1.12",
+    "@langchain/langgraph": "^1.4.14",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.5.11"
+  }
+}

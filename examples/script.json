@@ -1,0 +1,31 @@
+{
+  "title": "示例结构，请用正式脚本替换",
+  "shots": [
+    {
+      "id": "shot01",
+      "type": "dialogue",
+      "characters": ["character01"],
+      "speaker": "character01",
+      "text": "请在此填写实际台词。",
+      "emotion": "坚定，稍作停顿",
+      "scene": "城楼前的武将半身近景，脸部清晰，背景简洁",
+      "action": "武将面对镜头说话，头部轻微移动",
+      "endScene": "",
+      "needsLastFrame": false,
+      "duration": 5
+    },
+    {
+      "id": "shot02",
+      "type": "action",
+      "characters": ["character01"],
+      "speaker": null,
+      "text": "",
+      "emotion": "",
+      "scene": "同一城楼前，武将握住剑柄",
+      "action": "缓慢拔剑，衣袍随风摆动，保持五官和盔甲一致",
+      "endScene": "同一机位、背景与光线，武将拔出长剑指向画面前方",
+      "needsLastFrame": true,
+      "duration": 5
+    }
+  ]
+}

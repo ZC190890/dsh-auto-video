@@ -1,0 +1,19 @@
+{
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "targetDurationSeconds": 50,
+    "maxDurationSeconds": 60,
+    "maxCharacters": 5
+  },
+  "budget": {
+    "currency": "CNY",
+    "target": 50,
+    "hardLimit": 70
+  },
+  "tools": {
+    "ffmpeg": "bin/ffmpeg.exe",
+    "ffprobe": "bin/ffprobe.exe"
+  }
+}

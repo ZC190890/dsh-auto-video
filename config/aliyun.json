@@ -1,0 +1,54 @@
+{
+  "region": "cn-beijing",
+  "onlineEnabled": false,
+  "defaultMode": "api",
+  "audioReview": {
+    "model": "qwen3.8-omni-flash",
+    "promptVersion": 1,
+    "reservationCents": 20,
+    "capability": "音频理解与文本输出（官方 Qwen-Omni 指南，2026-09-21 核实）；不用于语音生成",
+    "priceNote": "2026-09-22官方北京价输入0.8元/百万token、缓存0.1、输出2.7；每次短请求保守预留20分非实扣，证据input/second-film/price-evidence.json。",
+    "toneProtocol": "creative-tone-review",
+    "toneProtocolVersion": 1,
+    "tonePromptVersion": 1,
+    "toneReservationCents": 20,
+    "toneNote": "创作链路的自动语气判断是独立协议（按表演段审核，五项分别给结论与依据；通过与否由本地规则从五项汇总，不看模型总分）。沿用同一个 Qwen-Omni 模型与传输方式，旧 audio-review 路径与旧记录语义不变。每个表演段每轮新增 1 次音频理解请求；该模型单价未逐项核实，费用按预留保守记录、未知价格记为未知而不是 0。"
+  },
+  "planner": {
+    "model": "qwen3.8-omni-flash",
+    "promptVersion": 1,
+    "reservationCents": 20,
+    "includeVoiceSample": true,
+    "roles": "素材分析与制作简报、脚本生成与修订、分镜与提示词、表演指令、质量判断、返工意见、阶段决策；外部助手已退出运行链路（2026-09-21）",
+    "priceNote": "2026-09-22官方北京价输入0.8元/百万token、缓存0.1、输出2.7；每次短请求保守预留20分非实扣，证据input/second-film/price-evidence.json。",
+    "thinking": {
+      "enabled": false,
+      "maxTokens": 4096,
+      "timeoutSeconds": 240,
+      "streamIdleSeconds": 90,
+      "basis": "官方 deep-thinking 页（2026-09-23 核实，https://help.aliyun.com/zh/model-studio/deep-thinking）：qwen3.8-omni-flash 属千问3.8 Omni 系列，混合思考模式且默认开启思考；OpenAI 兼容接口用 enable_thinking（true=先思考，false=直接回复）开关，故规划请求关闭思考以缩短长思考导致的空转。同页指出该系列用 reasoning_effort 调档，但其取值集合在可访问的官方页面未确认，因此不发送任何取值（避免编造参数）。",
+      "effortNote": "如需启用调档，请先按官方页面确认 reasoning_effort 取值后再填 effort 字段；未填写时不发送该参数。",
+      "maxTokensNote": "max_tokens 不作为思考上限：2026-09-22 实测（Request ID d800a709-89e0-98eb-8661-f2ca96851a13）在请求 max_tokens=4096 时输出 14115 tokens，其中 reasoning_tokens=14114、text_tokens=1，说明思考不受该参数约束。",
+      "timeoutNote": "timeoutSeconds 为规划请求总时限，streamIdleSeconds 为流空闲时限，二者与上传(120秒)、结果下载(180秒)、视频轮询(600秒)分开配置；不靠无限延长超时掩盖问题。"
+    }
+  },
+  "models": {
+    "text": "deepseek-flash",
+    "vision": "qwen-vl-plus",
+    "image": "qwen-image-3.0",
+    "portrait": "qwen-image-3.0-pro",
+    "voiceEnrollment": "qwen-voice-enrollment",
+    "speech": "qwen3-tts-vc-2026-01-22",
+    "dialogueVideo": "wan2.7-i2v",
+    "actionVideo": "wan2.2-kf2v-flash"
+  },
+  "resolution": "1080P",
+  "imageSize": "1664*936",
+  "portraitSize": "1024*1360",
+  "pollIntervalSeconds": 15,
+  "pollTimeoutSeconds": 600,
+  "maxAttemptsPerAsset": 2,
+  "maxAttemptsNote": "仅作历史信息，不参与运行判断：实际规则为「每个制作单元首次生成 + 最多 3 次返工」，由 services/aliyun/units.js 与 jobs/aliyun/<id>/unit-attempts.json 强制执行。",
+  "budgetNote": "50/70 元历史金额保留为记录，不再阻塞制作；费用按实际账单结算，未知价格记为未知（不等于 0）。",
+  "authorizationFile": "input/second-film/api-authorization.json"
+}

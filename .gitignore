@@ -1,0 +1,24 @@
+# Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and local executables
+/node_modules/
+/bin/
+
+# User assets, generated payloads, task state and outputs
+/input/
+/jobs/
+/output/
+/backups/
+/archive/
+**/archive/
+
+# Local diagnostics and temporary files
+*.log
+*.tmp
+*.lock
+/.wrapup-tmp/

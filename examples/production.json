@@ -1,0 +1,18 @@
+{
+  "id": "first-film",
+  "description": "请替换为你的视频故事文字。",
+  "style": "保持原始武将立绘的国风插画风格，电影化光线，横屏16:9",
+  "targetDurationSeconds": 50,
+  "maxDurationSeconds": 60,
+  "characters": [
+    {
+      "id": "character01",
+      "name": "请填写武将名称",
+      "image": "input/images/reference.png",
+      "frontImage": "input/characters/character01/front.png",
+      "voiceSample": "input/audio/character01.wav",
+      "traits": "请填写需要严格保留的脸型、发型、服饰与武器特征"
+    }
+  ],
+  "intakeFile": "input/director-brief.json"
+}
